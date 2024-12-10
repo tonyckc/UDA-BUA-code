@@ -25,6 +25,21 @@ Due to the restricted license of AAPM-Moyo dataset, we **CANNOT** directly share
 **Pretrained Source Domain model**
 We provide a source-trained model in 'pretrained_model/' folder. This model is trained on AAPM-Moyo 2016 dataset. You can also use your own pre-trained model. Please set the correct model path at [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L202).
 
+if you get the dataset,the dataset saving structure will be 
+
+     - /your_path/
+     
+        └── AAPM
+               ├── 1200000_1mm(50%)/
+     
+               ├── 110000_1mm (5%)/
+     
+               ├── full_1mm/
+               
+               ├── quarter_1mm (25%)/
+          
+        └── ISICDM
+
 ## Training
 1. All hyperparameters are in [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py). Some important settings include
 - "self.target": target domain, including  'AAPM_5', 'AAPM-50', and 'ISICDM'
