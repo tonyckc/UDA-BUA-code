@@ -1,12 +1,14 @@
 # Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment
 
 
-This is the official PyTorch implementation of our paper, coined [Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment] ([https://ieeexplore.ieee.org/document/10457051](https://ieeexplore.ieee.org/document/10457051)). If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
+This is the official PyTorch implementation of our paper, coined [Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment] ([https://ieeexplore.ieee.org/document/10593806](https://ieeexplore.ieee.org/document/10593806)). If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
 
 
 # Usage
 ## Environment  
 please see the requirement file
+## Dataset 
+Due to the restricted license of AAPM Moyo dataset, 
 ## Training your model
 1. download the Fundus dataset at https://drive.google.com/file/d/1zTeTiTA5CBKOCPq_xVRajWVKUtjjPSrF/view?usp=sharing and put it into the dir at "your_path/fundus/*"
 2. create the environment as required by the requirement file
