@@ -8,7 +8,18 @@ This is the official PyTorch implementation of our paper, coined [Unsupervised D
 ## Environment  
 please see the requirement file
 ## Dataset 
-Due to the restricted license of AAPM Moyo dataset, 
+     - Source Domain: 2016 NIH AAPM-Mayo Clinic Low-dose CT Grand Challenge Dataset (25% of normal dose)
+     - Target Domain: 
+          - Simulated 5% dose of source domain
+          - Simulated 50% dose of source domain
+          - ISICDM 2020 Challenge Dataset (<25% dose)
+
+Due to the restricted license of AAPM-Moyo dataset, we CAN NOT directly share the above datasets with you. Two options for you:
+
+**Get the datasets from our:** - You can get the license for the AAPM-Moyo dataset by following the instructions at https://www.aapm.org/grandchallenge/lowdosect/ . If you have get the access right from AAPM, you can email us (ck.ee@my.cityu.edu.hk) to provide the given proof. Then, we will share with you a download link including all the above datasets. 
+
+**Simulate by yourself:** - We provide a simulation file that can be used to process your dataset.
+
 ## Training your model
 1. download the Fundus dataset at https://drive.google.com/file/d/1zTeTiTA5CBKOCPq_xVRajWVKUtjjPSrF/view?usp=sharing and put it into the dir at "your_path/fundus/*"
 2. create the environment as required by the requirement file
