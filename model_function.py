@@ -1,10 +1,4 @@
-'''
-@Description: 
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-06-28 17:43:02
-@LastEditors: GuoYi
-'''
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
