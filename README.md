@@ -14,24 +14,24 @@ please see the requirement file
           - Simulated 50% dose of source domain
           - ISICDM 2020 Challenge Dataset (<25% dose)
 
-Due to the restricted license of AAPM-Moyo dataset, we CAN NOT directly share the above datasets with you. Two options for you:
+Due to the restricted license of AAPM-Moyo dataset, we **CANNOT** directly share the above datasets with you. Two options for you:
 
 **Get the datasets from our:** - You can get the license for the AAPM-Moyo dataset by following the instructions at https://www.aapm.org/grandchallenge/lowdosect/ . If you have get the access right from AAPM, you can email us (ck.ee@my.cityu.edu.hk) to provide the given proof. Then, we will share with you a download link including all the above datasets. 
 
-**Simulate by yourself:** - We provide a simulation file that can be used to process your dataset.
+**Simulate by yourself:** We provide a simulation file that you can use to process your dataset.
 
-## Training your model
-1. download the Fundus dataset at https://drive.google.com/file/d/1zTeTiTA5CBKOCPq_xVRajWVKUtjjPSrF/view?usp=sharing and put it into the dir at "your_path/fundus/*"
-2. create the environment as required by the requirement file
-3. set key training parameters for train.py file:
-     - "datasetTrain" - source domains, such as [1,2,4]
-     - "datasetTest" - target domain, such as [3]
-     - "data-dir" - where your dataset as step 1
-     - "label" - determine the objective ( OC or OD ?)of validation for best model choice.
-4. run train.py and you will get the saved model
-## Visualization using saved model
-1. set the you wanted model dir in test_visulization.py 
-2. run test_visualization.py
+**Pretrained Source Domain model**
+We provide a source-trained model in 'pretrained_model/' folder. This model is trained on AAPM-Moyo 2016 dataset. You can also use your own pre-trained model. Please set the correct model path at [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L202).
 
-## Demo: Fast testing on a target domain using the provided .ckpt model
-We offered a .ckpt file at https://drive.google.com/file/d/1-ntNwztBANmKnkf6VBZqEWGPqYL5sWg-/view?usp=sharing (OD - Target domain=4 - ASD=0.831 - Dice=0.936 ). You can use this model to get a fast testing process on the OD #4 target domain using test_visualization.py  
+## Training
+1. All hyperparameters are in [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py). Some important settings include
+- "self.target": target domain, including  'AAPM_5', 'AAPM-50', and 'ISICDM'
+- "self.baseline_type:" choose different models for training. Our model is named "ours_new". You can choose other baseline methods but need to set the [self.baseline = True](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L68)
+- "self.data_root_path": path for dataset 
+- "self.root_path": path for training results 
+2. Run train.py
+
+## LDCT image denoising/reconstruction benchmarking methods for unsupervised domain problems
+We provide wide LDCT image denoising/reconstruction benchmarking methods for unsupervised domain problems. You can choose different model names at [self.baseline_type](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L68):
+- [ClycleGAN](): self.baseline_type = 'clycle'
+  
