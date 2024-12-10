@@ -1,10 +1,3 @@
-'''
-@Description: 
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-07-08 20:57:37
-@LastEditors: GuoYi
-'''
 from torch import nn
 import torch
 import glob
