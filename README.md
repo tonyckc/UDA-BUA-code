@@ -1,7 +1,9 @@
 # Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment
 
 
-This is the official PyTorch implementation of our paper, coined [Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment] ([https://ieeexplore.ieee.org/document/10593806](https://ieeexplore.ieee.org/document/10593806)). If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
+This is the official PyTorch implementation of our paper, coined [Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment] ([https://ieeexplore.ieee.org/document/10593806](https://ieeexplore.ieee.org/document/10593806)). 
+
+If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
 
 
 # Usage
@@ -16,7 +18,7 @@ please see the requirement file
 
 Due to the restricted license of AAPM-Moyo dataset, we **CANNOT** directly share the above datasets with you. Two options for you:
 
-**Get the datasets from our:** - You can get the license for the AAPM-Moyo dataset by following the instructions at https://www.aapm.org/grandchallenge/lowdosect/ . If you have get the access right from AAPM, you can email us (ck.ee@my.cityu.edu.hk) to provide the given proof. Then, we will share with you a download link including all the above datasets. 
+**Get the datasets from our:** - You can get the license for the AAPM-Moyo dataset by following the instructions at [AAPM Moyo challenge website](https://www.aapm.org/grandchallenge/lowdosect/) . If you have get the access right from AAPM, you can email us (ck.ee@my.cityu.edu.hk) to provide the given proof. Then, we will share with you a download link including all the above datasets. 
 
 **Simulate by yourself:** We provide a simulation file that you can use to process your dataset.
 
@@ -33,5 +35,10 @@ We provide a source-trained model in 'pretrained_model/' folder. This model is t
 
 ## LDCT image denoising/reconstruction benchmarking methods for unsupervised domain problems
 We provide wide LDCT image denoising/reconstruction benchmarking methods for unsupervised domain problems. You can choose different model names at [self.baseline_type](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L68):
-- [ClycleGAN](): self.baseline_type = 'clycle'
+- [ClycleGAN](https://www.sciencedirect.com/science/article/pii/S1361841521002541): self.baseline_type = 'clycle'
+- [Noise2noise](https://arxiv.org/abs/1803.04189): self.baseline_type = 'n2n'
+- [CCDnet](https://www.sciencedirect.com/science/article/pii/S0010482523006844): self.baseline_type = 'RMF'
+- [UDA](https://ieeexplore.ieee.org/abstract/document/9969607): self.baseline_type = 'uda'
+- WGAN-VGG: self.baseline_type = 'WGAN'
+  
   
