@@ -727,7 +727,7 @@ class BasicBlock(nn.Module):  #
         return out
 
 
-class Generator(nn.Module):  # 网络同样继承自Module
+class Generator(nn.Module):  # 
 
 
     def __init__(self, layers):
@@ -737,28 +737,25 @@ class Generator(nn.Module):  # 网络同样继承自Module
         self.conv1 = nn.Conv2d(1, self.inplanes, kernel_size=3, stride=1, padding=1, bias=False)
         self.relu1 = nn.ReLU()
 
-        self.layer1 = self._make_layer([32, 32], layers-2)  # self._make_layer是这里自定的包含残差网络的网络模块 416,416,32 -> 208,208,64
+        self.layer1 = self._make_layer([32, 32], layers-2)  # self._make_layer  416,416,32 -> 208,208,64
         self.outplanes = 32
         self.conv9 = nn.Conv2d(self.outplanes, 1, kernel_size=3, stride=1, padding=1, bias=False)
         self.relu9 = nn.ReLU()
 
-    def _make_layer(self, planes, blocks):  # 这个函数自定义构造残差网络模块
+    def _make_layer(self, planes, blocks):  # 
         layers = []
-        # 在一个列表中创建网络层，每个元素有两个子元素，第一个是网络名，第二个是torch.nn.modules.conv.Conv2d格式的网络层，append摞起来就行
-        # 下采样，步长为2，卷积核大小为3
         #layers.append(("ds_conv", nn.Conv2d(self.inplanes, planes[1], kernel_size=3, stride=2, padding=1, bias=False)))
         #layers.append(("ds_bn", nn.BatchNorm2d(planes[1])))
         #layers.append(("ds_relu", nn.LeakyReLU(0.1)))
 
-        # 加入残差结构
+        # 
         self.inplanes = planes[1]
         for i in range(0, blocks):
-            layers.append(("residual_{}".format(i), BasicBlock(self.inplanes, planes)))  # 这里也是一个名＋一个网络层，继续往layer列表里添加
+            layers.append(("residual_{}".format(i), BasicBlock(self.inplanes, planes)))  # 
         return nn.Sequential(OrderedDict(
-            layers))  # 最后通过OrderDict函数将封装好各网络层的layer列表转换成collections.OrderedDict变量，最终再使用nn.Sequential函数将其转换成torch.nn.modules.container.Sequential，变为module类网络，供后续使用
+            layers))  # 
 
-
-    def forward(self, x):  # 定义前向传播
+    def forward(self, x):  #
         x = self.conv1(x)
         x = self.relu1(x)
 
