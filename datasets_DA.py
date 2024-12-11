@@ -1,10 +1,4 @@
-'''
-@Description:
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-07-13 09:45:03
-@LastEditors: GuoYi
-'''
+
 import torch
 # import astra
 import copy
