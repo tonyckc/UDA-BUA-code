@@ -43,7 +43,7 @@ if you get the dataset,the dataset saving structure will be
 ## Training
 1. All hyperparameters are in [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py). Some important settings include
 - "self.target": target domain, including  'AAPM_5', 'AAPM-50', and 'ISICDM'
-- "self.baseline_type:" choose different models for training. Our model is named "ours_new". You can choose other baseline methods but need to set the [self.baseline = True](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L68)
+- "self.baseline_type:" choose different models for training. Our model is named "ours_new" (corresponds to [DA_Denoiser in model.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/model.py#L1478)). You can choose other baseline methods but need to set the [self.baseline = True](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L68)
 - "self.data_root_path": path for dataset 
 - "self.root_path": path for training results 
 2. Run train.py
