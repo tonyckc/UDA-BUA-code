@@ -1,10 +1,4 @@
-'''
-@Description: 
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-06-17 15:39:21
-@LastEditors: GuoYi
-'''
+
 import os
 import torch
 import time 
