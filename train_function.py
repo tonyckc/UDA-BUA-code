@@ -1,10 +1,4 @@
-'''
-@Description: 
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-06-28 20:50:56
-@LastEditors: GuoYi
-'''
+
 import matplotlib.pyplot as plt
 import os
 from tqdm import tqdm
