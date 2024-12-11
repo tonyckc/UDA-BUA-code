@@ -484,9 +484,9 @@ class Vgg19_out(nn.Module):
         print('-'*20,'loading VGG Model...','-'*20)
         vgg = models.vgg19(pretrained=False) # .cuda()
         if remote:
-            vgg.load_state_dict(torch.load('/hdd/ckc/CT/vgg19_new.pth'))#/media/ubuntu/88692f9c-d324-4895-8764-1cf202f9e6ac/chenkecheng
+            vgg.load_state_dict(torch.load('./pretrained_model/vgg19_new.pth'))#/media/ubuntu/88692f9c-d324-4895-8764-1cf202f9e6ac/chenkecheng
         else:
-            vgg.load_state_dict(torch.load('/media/ubuntu/88692f9c-d324-4895-8764-1cf202f9e6ac/chenkecheng/vgg19_new.pth'))
+            vgg.load_state_dict(torch.load('./pretrained_model/vgg19_new.pth'))
         print('-' * 20, 'loading VGG Model Done', '-' * 20)
         vgg.eval()
         vgg_pretrained_features = vgg.features
