@@ -1,10 +1,4 @@
-'''
-@Description: 
-@Author: GuoYi
-@Date: 2020-06-15 10:04:32
-@LastEditTime: 2020-07-03 22:22:14
-@LastEditors: GuoYi
-'''
+
 import os
 
 import numpy as np
