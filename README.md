@@ -20,12 +20,7 @@ Due to the restricted license of AAPM-Moyo dataset, we **CANNOT** directly share
 
 **Get the datasets from our:** - You can get the license for the AAPM-Moyo dataset by following the instructions at [AAPM Moyo challenge website](https://www.aapm.org/grandchallenge/lowdosect/) . If you have get the access right from AAPM, you can email us (ck.ee@my.cityu.edu.hk) to provide the given proof. Then, we will share with you a download link including all the above datasets. 
 
-**Simulate by yourself:** We provide a simulation file that you can use to process your dataset.
-
-## Pretrained Source Domain model
-We provide a source-trained model in 'pretrained_model/' folder. This model is trained on AAPM-Moyo 2016 dataset. You can also use your own pre-trained model. Please set the correct model path at [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L202).
-
-if you get the dataset,the dataset saving structure will be 
+If you get the dataset,the dataset saving structure will be 
 
      - /your_path/
      
@@ -39,6 +34,12 @@ if you get the dataset,the dataset saving structure will be
                ├── quarter_1mm (25%)/
           
         └── ISICDM
+**Simulate by yourself:** We provide a simulation file that you can use to process your dataset.
+
+## Pretrained Source Domain Model and VGG19 Model
+1. We provide a source-trained model in 'pretrained_model/' folder. This model is trained on AAPM-Moyo 2016 dataset. You can also use your own pre-trained model. Please set the correct model path at [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L202).
+
+2. We also provide the pretrained VGG19 model for perception loss computation at [here](https://drive.google.com/file/d/1mNAn0P42CcRx3-qzw76Px93s2H8jajc-/view?usp=sharing). Please download the pretrained model and put it to the 'pretrained_model/' folder
 
 ## Training
 1. All hyperparameters are in [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py). Some important settings include
