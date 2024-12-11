@@ -22,7 +22,7 @@ Due to the restricted license of AAPM-Moyo dataset, we **CANNOT** directly share
 
 **Simulate by yourself:** We provide a simulation file that you can use to process your dataset.
 
-**Pretrained Source Domain model**
+## Pretrained Source Domain model
 We provide a source-trained model in 'pretrained_model/' folder. This model is trained on AAPM-Moyo 2016 dataset. You can also use your own pre-trained model. Please set the correct model path at [init.py](https://github.com/tonyckc/UDA-BUA-code/blob/main/init.py#L202).
 
 if you get the dataset,the dataset saving structure will be 
