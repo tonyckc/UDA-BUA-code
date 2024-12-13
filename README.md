@@ -56,5 +56,16 @@ We provide wide LDCT image denoising/reconstruction benchmarking methods for uns
 - [CCDnet](https://www.sciencedirect.com/science/article/pii/S0010482523006844): self.baseline_type = 'RMF'
 - [UDA](https://ieeexplore.ieee.org/abstract/document/9969607): self.baseline_type = 'uda'
 - WGAN-VGG: self.baseline_type = 'WGAN'
-  
+
+***
+If you find our code useful for your work please cite:
+```
+@article{kecheng2024tnnls,
+  title={Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment},
+  author={Chen, Kecheng; Liu, Jie; Wan, Renjie; Lee, Victor; Vardhanabhuti, Varut; Yan, Hong; Li, Haoliang},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2024},
+  publisher={IEEE}
+}
+```
   
