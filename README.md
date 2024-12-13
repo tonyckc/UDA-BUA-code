@@ -1,7 +1,9 @@
 # Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment
 
 
-This is the official PyTorch implementation of our paper, coined [Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment](https://ieeexplore.ieee.org/document/10593806)). 
+This is the official PyTorch implementation of our paper, coined:
+
+[Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment](https://ieeexplore.ieee.org/document/10593806)). 
 
 If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
 
