@@ -10,7 +10,7 @@ If you have any problems, please email me (ck.ee@my.cityu.edu.hk).
 
 # Usage
 ## Environment  
-please see the requirement file
+please see the requirement.txt file
 ## Dataset 
      - Source Domain: 2016 NIH AAPM-Mayo Clinic Low-dose CT Grand Challenge Dataset (25% of normal dose)
      - Target Domain: 
