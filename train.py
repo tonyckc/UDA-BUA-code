@@ -50,28 +50,28 @@ def main(args):
                                   args.train_folder, True, pre_trans_img, args.data_length["train"], "train")}
     # our dataloader
     else:
+        # upparied model can be ignored.
         if args.unpaired == True:
             datasets = {
                 "train": BuildDataSet_unpaired(args.baseline, args.source, args.target, args.patch_n, args.data_root_path,
-                                      args.train_folder, True, pre_trans_img, args.data_length["train"], "train"),
-                "val": BuildDataSet(args.baseline, args.source, args.target, 1, args.data_root_path, args.val_folder,
-                                    False, None, args.data_length["test"], "val")}
+                                      args.train_folder, True, pre_trans_img, args.data_length["train"], "train")}
         else:
-            datasets = {"train": BuildDataSet(args.baseline,args.source,args.target, args.patch_n,args.data_root_path, args.train_folder, True, pre_trans_img, args.data_length["train"], "train",patch_size=args.patch_size),
-                "val": BuildDataSet(args.baseline,args.source,args.target, 1,args.data_root_path, args.val_folder, False, None, args.data_length["test"], "val",patch_size=args.patch_size)}
+            datasets = {"train": BuildDataSet(args.baseline,args.source,args.target, args.patch_n,args.data_root_path, args.train_folder, True, pre_trans_img, args.data_length["train"], "train",patch_size=args.patch_size)}
 
 
     kwargs = {"num_workers": args.num_workers, "pin_memory": True if args.mode is "train" else False}
 
+    # Get final dataloader dictionary: package using the torch-based Dataloader Class
+    # dataloaders['train']: includes source paired low- and high-dose data  and target low-dose data 
+    # dataloaders['val']: target low- (for inference) and high-dose (for computing quantitative scores) data
     if args.test:
+        # test using one patient data
         dataloaders = {
-            'train': DataLoader(datasets['train'], args.batch_size_dataloader['train'], shuffle=args.is_shuffle,
-                                **kwargs),
-            'val': DataLoader(datasets['val'], args.batch_size_dataloader['test'], shuffle=False,
-                                **kwargs)}
+            'val': get_test(data_root_path=args.data_root_path,region=args.target)}
 
     else:
         # validation using one patient data
+        
         dataloaders = {
             'train': DataLoader(datasets['train'], args.batch_size_dataloader['train'], shuffle=args.is_shuffle, **kwargs),
             'val': get_test(data_root_path=args.data_root_path,region=args.target) }
