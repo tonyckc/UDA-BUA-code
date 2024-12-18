@@ -62,16 +62,14 @@ def main(args):
     kwargs = {"num_workers": args.num_workers, "pin_memory": True if args.mode is "train" else False}
 
     # Get final dataloader dictionary: package using the torch-based Dataloader Class
-    # dataloaders['train']: includes source paired low- and high-dose data  and target low-dose data 
-    # dataloaders['val']: target low- (for inference) and high-dose (for computing quantitative scores) data
+    # dataloaders['train']: includes source-domain paired low- and high-dose data  and target-domain low-dose data 
+    # dataloaders['val']: target-domain low- (for inference) and high-dose (for computing quantitative scores) data
     if args.test:
         # test using one patient data
         dataloaders = {
             'val': get_test(data_root_path=args.data_root_path,region=args.target)}
 
     else:
-        # validation using one patient data
-        
         dataloaders = {
             'train': DataLoader(datasets['train'], args.batch_size_dataloader['train'], shuffle=args.is_shuffle, **kwargs),
             'val': get_test(data_root_path=args.data_root_path,region=args.target) }
