@@ -1,0 +1,14 @@
+bayesian_torch==0.3.0
+matplotlib==3.5.3
+numpy==1.23.1
+numpy==1.22.4
+opencv_python==4.7.0.72
+opencv_python_headless==4.8.1.78
+piq==0.7.1
+pydicom==2.3.1
+pyrtools==1.0.6
+PyWavelets==1.4.1
+scipy==1.9.1
+torch==2.4.1
+torchvision==0.15.1+cu118
+tqdm==4.66.5
